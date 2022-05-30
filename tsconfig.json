@@ -11,7 +11,16 @@
     "isolatedModules": true,
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "baseUrl": "./",  //告诉编译器到哪查找模块。 所有非相对模块导入都会被当做相对于 baseUrl
+    "paths": {
+      //让编译 ts 时也能解析对应的路径
+      "@/*": ["src/*"],
+      // "views/*": ["src/views/*"],
+      // "components/*": ["src/components/*"],
+      // "assets/*": ["src/assets/*"]
+  }
+  
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "references": [{ "path": "./tsconfig.node.json" }]
